@@ -5,11 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CarInsuranceProjApp.Controllers
+namespace Car_Insurance.Controllers
 {
     public class HomeController : Controller
     {
-        private CarsDBEntities1 _db = new CarsDBEntities1();
+        private CarsDBEntities _db = new CarsDBEntities();
 
 
         Car c = new Car();
@@ -85,7 +85,7 @@ namespace CarInsuranceProjApp.Controllers
             c.CarMake = _pass.CarMake;
             c.CarModel = _pass.CarModel;
             c.Tickets = _pass.Tickets;
-            c.Dui = _pass.Dui;
+            c.DUI = _pass.DUI;
             c.EmailAddress = _pass.EmailAddress;
             c.Coverage = _pass.Coverage;
         }
@@ -129,7 +129,7 @@ namespace CarInsuranceProjApp.Controllers
             {
                 quoteTotal = quoteTotal + (c.Tickets * 10);
             }
-            if (c.Dui.ToLower() == "yes")
+            if (c.DUI.ToLower() == "yes")
             {
                 quoteTotal = quoteTotal + (Decimal.Multiply(quoteTotal, .25M));
             }
