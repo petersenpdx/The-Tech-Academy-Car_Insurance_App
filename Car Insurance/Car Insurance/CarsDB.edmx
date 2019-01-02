@@ -79,7 +79,6 @@
                 <ScalarProperty Name="Tickets" ColumnName="Tickets" />
                 <ScalarProperty Name="DUI" ColumnName="DUI" />
                 <ScalarProperty Name="Coverage" ColumnName="Coverage" />
-                <ScalarProperty Name="QuoteTotal" ColumnName="QuoteTotal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

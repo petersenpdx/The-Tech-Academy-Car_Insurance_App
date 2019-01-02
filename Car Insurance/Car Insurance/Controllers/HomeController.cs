@@ -9,7 +9,7 @@ namespace Car_Insurance.Controllers
 {
     public class HomeController : Controller
     {
-        private CarsDBEntities1 _db = new CarsDBEntities1();
+        private CarsDBEntities _db = new CarsDBEntities();
 
 
         Car c = new Car();

@@ -162,11 +162,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cars.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cars.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Cars.tt</DependentUpon>
-    </Compile>
     <Compile Include="CarsDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +174,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CarsDB.mdf" />
+    <Content Include="App_Data\CarsDB_log.ldf">
+      <DependentUpon>CarsDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Cars.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CarsDB.edmx</DependentUpon>
@@ -295,7 +294,6 @@
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
