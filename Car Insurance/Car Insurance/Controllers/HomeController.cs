@@ -1,4 +1,4 @@
-﻿using CarInsuranceProjApp.Models;
+﻿using Car_Insurance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace Car_Insurance.Controllers
 {
     public class HomeController : Controller
     {
-        private CarsDBEntities _db = new CarsDBEntities();
+        private CarsDBEntities1 _db = new CarsDBEntities1();
 
 
         Car c = new Car();

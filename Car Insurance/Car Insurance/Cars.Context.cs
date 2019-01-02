@@ -13,10 +13,10 @@ namespace Car_Insurance
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CarsDBEntities : DbContext
+    public partial class CarsDBEntities1 : DbContext
     {
-        public CarsDBEntities()
-            : base("name=CarsDBEntities")
+        public CarsDBEntities1()
+            : base("name=CarsDBEntities1")
         {
         }
     
