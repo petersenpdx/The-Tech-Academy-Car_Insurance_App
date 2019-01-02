@@ -31,7 +31,6 @@
       <Schema Namespace="CarsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Car">
           <Key>
-            <PropertyRef Name="Id" />
             <PropertyRef Name="FirstName" />
             <PropertyRef Name="LastName" />
             <PropertyRef Name="EmailAddress" />
@@ -42,6 +41,8 @@
             <PropertyRef Name="Tickets" />
             <PropertyRef Name="DUI" />
             <PropertyRef Name="Coverage" />
+            <PropertyRef Name="QuoteTotal" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -54,10 +55,10 @@
           <Property Name="Tickets" Type="Int32" Nullable="false" />
           <Property Name="DUI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Coverage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="QuoteTotal" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="QuoteTotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
         </EntityType>
         <EntityContainer Name="CarsDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cars" EntityType="Self.Car" />
+          <EntitySet Name="Car" EntityType="Self.Car" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -65,9 +66,10 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CarsDBModelStoreContainer" CdmEntityContainer="CarsDBEntities">
-          <EntitySetMapping Name="Cars">
+          <EntitySetMapping Name="Car">
             <EntityTypeMapping TypeName="CarsDBModel.Car">
               <MappingFragment StoreEntitySet="Car">
+                <ScalarProperty Name="QuoteTotal" ColumnName="QuoteTotal" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
