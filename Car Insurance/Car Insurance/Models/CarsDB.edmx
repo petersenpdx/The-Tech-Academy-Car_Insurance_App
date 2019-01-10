@@ -31,17 +31,6 @@
       <Schema Namespace="CarsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Car">
           <Key>
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="EmailAddress" />
-            <PropertyRef Name="DateOfBirth" />
-            <PropertyRef Name="CarYear" />
-            <PropertyRef Name="CarMake" />
-            <PropertyRef Name="CarModel" />
-            <PropertyRef Name="Tickets" />
-            <PropertyRef Name="DUI" />
-            <PropertyRef Name="Coverage" />
-            <PropertyRef Name="QuoteTotal" />
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />

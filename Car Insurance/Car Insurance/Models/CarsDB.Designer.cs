@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\peter\OneDrive\Documents\GitHub\Car_Insurance_App\Car Insurance\Car Insurance\CarsDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\peter\OneDrive\Documents\GitHub\Car_Insurance_App\Car Insurance\Car Insurance\Models\CarsDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

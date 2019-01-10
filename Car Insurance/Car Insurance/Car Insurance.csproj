@@ -157,15 +157,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Car.cs">
+    <Compile Include="Models\Car.cs">
       <DependentUpon>Cars.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cars.Context.cs">
+    <Compile Include="Models\Cars.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cars.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CarsDB.Designer.cs">
+    <Compile Include="Models\Cars.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cars.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CarsDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CarsDB.edmx</DependentUpon>
@@ -181,12 +186,12 @@
     <Content Include="App_Data\CarsDB_log.ldf">
       <DependentUpon>CarsDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Cars.Context.tt">
+    <Content Include="Models\Cars.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CarsDB.edmx</DependentUpon>
       <LastGenOutput>Cars.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Cars.tt">
+    <Content Include="Models\Cars.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CarsDB.edmx</DependentUpon>
       <LastGenOutput>Cars.cs</LastGenOutput>
@@ -225,11 +230,11 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <EntityDeploy Include="CarsDB.edmx">
+    <EntityDeploy Include="Models\CarsDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CarsDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="CarsDB.edmx.diagram">
+    <Content Include="Models\CarsDB.edmx.diagram">
       <DependentUpon>CarsDB.edmx</DependentUpon>
     </Content>
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
@@ -296,9 +301,7 @@
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
