@@ -23,7 +23,7 @@ namespace InsuranceApplication
         public string CarMake { get; set; }
         public string CarModel { get; set; }
         public string DUI { get; set; }
-        public string SpeedingTickets { get; set; }
+        public int SpeedingTickets { get; set; }
         public string CoverageType { get; set; }
         public string CustomerQuote { get; set; }
     }

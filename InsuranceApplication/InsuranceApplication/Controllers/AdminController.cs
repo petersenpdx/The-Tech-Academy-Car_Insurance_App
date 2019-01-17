@@ -28,7 +28,7 @@ namespace InsuranceApplication.Controllers
                     quoteVm.CarMake = quote.CarMake;
                     quoteVm.CarModel = quote.CarModel;
                     quoteVm.DUI = quote.DUI;
-                    quoteVm.SpeedingTickets = Convert.ToInt32(quote.SpeedingTickets);
+                    quoteVm.SpeedingTickets = quote.SpeedingTickets;
                     quoteVm.CoverageType = quote.CoverageType;
                     quoteVm.CustomerQuote = quote.CustomerQuote;
                     quoteVms.Add(quoteVm);
