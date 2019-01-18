@@ -16,9 +16,9 @@ namespace InsuranceApplication.Models
     public string CarMake { get; set; }
     public string CarModel { get; set; }
     public string DUI { get; set; }
-    public int SpeedingTickets { get; set; }
+    public int? SpeedingTickets { get; set; }
     public string CoverageType { get; set; }
-
+        
     public string CalculateQuote(string firstName, string lastName, string emailAddress, DateTime dateOfBirth,
                                     string carYear, string carMake, string carModel, string dui, int speedingTicketNum, string typeOfCoverage)
     {
@@ -37,7 +37,7 @@ namespace InsuranceApplication.Models
         if (carMake == "Porsche") { quote += 25; }
         if (carModel == "Carrera") { quote += 25; }
 
-        // Adding $10 for every sppeding ticket 
+        // Adding $10 for every speeding ticket 
         quote += speedingTicketNum * 10;
 
         // If applicant has DUI add 25%
