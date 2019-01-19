@@ -1,4 +1,5 @@
-﻿using InsuranceApplication.ViewModels;
+﻿
+using InsuranceApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,12 +24,12 @@ namespace InsuranceApplication.Controllers
                     quoteVm.FirstName = quote.FirstName;
                     quoteVm.LastName = quote.LastName;
                     quoteVm.EmailAddress = quote.EmailAddress;
-                    quoteVm.DateOfBirth = quote.DateOfBirth.Value;
+                    quoteVm.DateOfBirth = quote.DateOfBirth;
                     quoteVm.CarYear = quote.CarYear;
                     quoteVm.CarMake = quote.CarMake;
                     quoteVm.CarModel = quote.CarModel;
                     quoteVm.DUI = quote.DUI;
-                    quoteVm.SpeedingTickets = Convert.ToInt32(quote.SpeedingTickets);
+                    quoteVm.SpeedingTickets = quote.SpeedingTickets;
                     quoteVm.CoverageType = quote.CoverageType;
                     quoteVm.CustomerQuote = quote.CustomerQuote;
                     quoteVms.Add(quoteVm);

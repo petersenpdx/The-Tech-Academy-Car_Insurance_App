@@ -20,7 +20,7 @@ namespace InsuranceApplication.Models
     public string CoverageType { get; set; }
         
     public string CalculateQuote(string firstName, string lastName, string emailAddress, DateTime dateOfBirth,
-                                    string carYear, string carMake, string carModel, string dui, int speedingTicketNum, string typeOfCoverage)
+                                    string carYear, string carMake, string carModel, string dui, int? speedingTicketNum, string typeOfCoverage)
     {
         decimal quote = 50m;
 
@@ -38,7 +38,7 @@ namespace InsuranceApplication.Models
         if (carModel == "Carrera") { quote += 25; }
 
         // Adding $10 for every speeding ticket 
-        quote += speedingTicketNum * 10;
+        quote += Convert.ToDecimal(speedingTicketNum) * 10;
 
         // If applicant has DUI add 25%
         if (dui == "Yes") { quote *= Convert.ToDecimal(1.25); }

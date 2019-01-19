@@ -18,12 +18,12 @@ namespace InsuranceApplication
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
-        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
         public string CarYear { get; set; }
         public string CarMake { get; set; }
         public string CarModel { get; set; }
         public string DUI { get; set; }
-        public string SpeedingTickets { get; set; }
+        public int? SpeedingTickets { get; set; }
         public string CoverageType { get; set; }
         public string CustomerQuote { get; set; }
     }

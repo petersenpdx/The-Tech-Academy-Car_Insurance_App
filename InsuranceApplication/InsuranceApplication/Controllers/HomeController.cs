@@ -17,10 +17,10 @@ namespace InsuranceApplication.Controllers
 
         [HttpPost]
         public ActionResult Quote (string firstName, string lastName, string emailAddress, DateTime dateOfBirth, string carYear,
-                                    string carMake, string carModel, string dui, int speedingTicketNum, string typeOfCoverage)
+                                    string carMake, string carModel, string dui, int? speedingTicketNum, string typeOfCoverage)
         {
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress))
-            {
+            { 
                 return View("~/Views/Shared/Error.cshtml");
             }
             else
@@ -36,7 +36,7 @@ namespace InsuranceApplication.Controllers
                     quote.CarMake = carMake;
                     quote.CarModel = carModel;
                     quote.DUI = dui;
-                    quote.SpeedingTickets = Convert.ToString(speedingTicketNum);
+                    quote.SpeedingTickets = speedingTicketNum;
                     quote.CoverageType = typeOfCoverage;
                     Calculation result = new Calculation();
                     quote.CustomerQuote = result.CalculateQuote(firstName, lastName, emailAddress, dateOfBirth, carYear, carMake, carModel, dui, speedingTicketNum, typeOfCoverage);
