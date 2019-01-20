@@ -36,7 +36,7 @@ namespace InsuranceApplication.Controllers
                     quote.CarMake = carMake;
                     quote.CarModel = carModel;
                     quote.DUI = dui;
-                    quote.SpeedingTickets = speedingTicketNum = 0;
+                    quote.SpeedingTickets = speedingTicketNum;
                     quote.CoverageType = typeOfCoverage;
                     Calculation result = new Calculation();
                     quote.CustomerQuote = result.CalculateQuote(firstName, lastName, emailAddress, dateOfBirth, carYear, carMake, carModel, dui, speedingTicketNum, typeOfCoverage);
