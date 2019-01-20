@@ -1,4 +1,5 @@
 ﻿using Car_Insurance;
+using Car_Insurance.CarsDB.edmx.Cars.tt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Car_Insurance.Controllers
 {
     public class HomeController : Controller
     {
-        private CarsDBEntities _db = new CarsDBEntities();
+        private CarsDB _db = new CarsDBEntities();
 
 
         Car c = new Car();

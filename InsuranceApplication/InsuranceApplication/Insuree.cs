@@ -28,3 +28,4 @@ namespace InsuranceApplication
         public string CustomerQuote { get; set; }
     }
 }
+

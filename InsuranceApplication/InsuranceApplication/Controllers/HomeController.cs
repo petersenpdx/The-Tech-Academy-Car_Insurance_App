@@ -19,7 +19,7 @@ namespace InsuranceApplication.Controllers
         public ActionResult Quote (string firstName, string lastName, string emailAddress, DateTime dateOfBirth, string carYear,
                                     string carMake, string carModel, string dui, int? speedingTicketNum, string typeOfCoverage)
         {
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress))
+           if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress))
             { 
                 return View("~/Views/Shared/Error.cshtml");
             }
@@ -31,18 +31,19 @@ namespace InsuranceApplication.Controllers
                     quote.FirstName = firstName;
                     quote.LastName = lastName;
                     quote.EmailAddress = emailAddress;
-                    quote.DateOfBirth = Convert.ToDateTime(dateOfBirth);
+                    quote.DateOfBirth = dateOfBirth;
                     quote.CarYear = carYear;
                     quote.CarMake = carMake;
                     quote.CarModel = carModel;
                     quote.DUI = dui;
-                    quote.SpeedingTickets = speedingTicketNum;
+                    quote.SpeedingTickets = speedingTicketNum = 0;
                     quote.CoverageType = typeOfCoverage;
                     Calculation result = new Calculation();
                     quote.CustomerQuote = result.CalculateQuote(firstName, lastName, emailAddress, dateOfBirth, carYear, carMake, carModel, dui, speedingTicketNum, typeOfCoverage);
 
                     db.Insurees.Add(quote);
                     db.SaveChanges();
+
 
                     var displayQuoteVm = new DisplayQuoteVm();
                     displayQuoteVm.CustomerQuote = result.CalculateQuote(firstName, lastName, emailAddress, dateOfBirth, carYear, carMake, carModel, dui, speedingTicketNum, typeOfCoverage);
@@ -54,3 +55,4 @@ namespace InsuranceApplication.Controllers
         }
     }
 }
+
