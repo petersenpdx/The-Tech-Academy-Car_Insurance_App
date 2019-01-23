@@ -1,5 +1,5 @@
 ﻿using Car_Insurance;
-using Car_Insurance.CarsDB.edmx.Cars.tt;
+using Car_Insurance.CarsDB.edmx.CarsDB.tt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace Car_Insurance.Controllers
 {
     public class HomeController : Controller
     {
-        private CarsDB _db = new CarsDBEntities();
+        public CarsDBEntities1 _db = new CarsDBEntities1();
 
 
         Car c = new Car();
@@ -18,19 +18,19 @@ namespace Car_Insurance.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(_db.Car.ToList());
+            return View(_db.Cars.ToList());
         }
 
         // ADMIN page
         public ActionResult Admin()
         {
-            return View(_db.Car.ToList());
+            return View(_db.Cars.ToList());
         }
 
         // CD: built nav to success
         public ActionResult Success()
         {
-            return View(_db.Car.OrderByDescending(x => x.QuoteTotal).Take(1).ToList());
+            return View(_db.Cars.OrderByDescending(x => x.QuoteTotal).Take(1).ToList());
         }
 
         // GET: Home/Details/5
@@ -57,10 +57,10 @@ namespace Car_Insurance.Controllers
             SetProps(carToCreate); // CD: ensure props are set
             carToCreate.QuoteTotal = Quote(); // CD: set gen'd quote
 
-            _db.Car.Add(carToCreate);
+            _db.Cars.Add(carToCreate);
             _db.SaveChanges();
 
-            return View("Success", _db.Car.OrderByDescending(x => x.QuoteTotal).Take(1).ToList()); // CD nav to success
+            return View("Success", _db.Cars.OrderByDescending(x => x.QuoteTotal).Take(1).ToList()); // CD nav to success
             //return RedirectToAction("Index"); // CD removed
 
             #region unused
@@ -145,7 +145,7 @@ namespace Car_Insurance.Controllers
         // GET: Home/Edit/5
         public ActionResult Edit(int id)
         {
-            var carToEdit = (from c in _db.Car
+            var carToEdit = (from c in _db.Cars
                              where c.Id == id
                              select c).First();
 
@@ -158,7 +158,7 @@ namespace Car_Insurance.Controllers
         [HttpPost]
         public ActionResult Edit(Car carToEdit)
         {
-            var originalCar = (from c in _db.Car
+            var originalCar = (from c in _db.Cars
                                where c.Id == carToEdit.Id
                                select c).First();
             if (!ModelState.IsValid)
@@ -174,7 +174,7 @@ namespace Car_Insurance.Controllers
         // GET: Home/Delete/5
         public ActionResult Delete(int id)
         {
-            Car deletedCar = _db.Car.Find(id);
+            Car deletedCar = _db.Cars.Find(id);
             if (deletedCar == null)
             {
                 return HttpNotFound();
@@ -189,8 +189,8 @@ namespace Car_Insurance.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Car deletedCar = _db.Car.Find(id);
-            _db.Car.Remove(deletedCar);
+            Car deletedCar = _db.Cars.Find(id);
+            _db.Cars.Remove(deletedCar);
             _db.SaveChanges();
 
 

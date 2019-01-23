@@ -1,0 +1,34 @@
+﻿@using CarInsurance01.Models;
+@model IEnumerable<CarInsurance01.Models.CarInfo01>
+
+@{
+    ViewBag.Title = "Success";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.carTotal)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+
+    {
+        <tr>
+            <td>
+                "Your car insurance quote"
+                @Html.DisplayFor(Modelitem => item.carTotal)
+            </td>
+        </tr>
+
+
+    }
+
+
+</table>
+
+@Html.ActionLink("Back to List", "Index")
+
+
+

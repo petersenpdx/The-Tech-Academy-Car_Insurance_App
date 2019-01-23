@@ -158,17 +158,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Car.cs">
-      <DependentUpon>Cars.tt</DependentUpon>
+      <DependentUpon>CarsDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cars.Context.cs">
+    <Compile Include="CarsDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cars.Context.tt</DependentUpon>
+      <DependentUpon>CarsDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cars.cs">
+    <Compile Include="CarsDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cars.tt</DependentUpon>
+      <DependentUpon>CarsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="CarsDB.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -186,15 +186,15 @@
     <Content Include="App_Data\CarsDB_log.ldf">
       <DependentUpon>CarsDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Cars.Context.tt">
+    <Content Include="CarsDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CarsDB.edmx</DependentUpon>
-      <LastGenOutput>Cars.Context.cs</LastGenOutput>
+      <LastGenOutput>CarsDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Cars.tt">
+    <Content Include="CarsDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CarsDB.edmx</DependentUpon>
-      <LastGenOutput>Cars.cs</LastGenOutput>
+      <LastGenOutput>CarsDB.cs</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

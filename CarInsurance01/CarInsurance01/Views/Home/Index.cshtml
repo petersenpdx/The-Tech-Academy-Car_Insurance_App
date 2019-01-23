@@ -1,0 +1,51 @@
+﻿<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h3 class="=m-0">Get your car insurance here. Fill out these questions and have a quote in minutes.</h3>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("CarInfo01", "Home", FormMethod.Post))
+            {
+                <div class="row no-gutters">
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="FirstName" type="Text" class="form-control" placeholder="First Name" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="LastName" type="Text" class="form-control" placeholder="Last Name" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="EmailAddress" type="email" class="form-control" placeholder="Email Address" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="CarMake" type="Text" class="form-control" placeholder="Car Make" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="CarModel" type="Text" class="form-control" placeholder="Car Model" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="Tickets" type="Text" class="form-control" placeholder="Tickets  0-3" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="DUI" type="Text" class="form-control" placeholder="Dui  Yes or No" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="Coverage" type="Text" class="form-control" placeholder="Coverage" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="CarYear" type="Text" class="form-control" placeholder="Car Year" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="DateofBirth" type="text" class="form-control" placeholder="Date of Birth " />
+                </div>
+
+                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+
+
+            }
+
+
+
+        </div>
+    </div>
+</div>

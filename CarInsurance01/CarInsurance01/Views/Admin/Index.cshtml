@@ -1,0 +1,40 @@
+﻿@using CarInsurance01.ViewModel
+@model List<CarInfo01Vm>
+
+<div class="row no-gutters col-sm-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="=m-0">Insurance Quote</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var carinfo01vm in Model)
+            {
+                using (Html.BeginForm("unsubscribe", "Admin", FormMethod.Post))
+                {
+                    <input type="hidden" name="id" value="@carinfo01vm.id" />
+                    <div class="row">
+                        <div class="col">
+                            @carinfo01vm.FirstName
+                        </div>
+                        <div class="col">
+                            @carinfo01vm.LastName
+                        </div>
+                        <div class="col">
+                            @carinfo01vm.EmailAddress
+                        </div>
+                        <div class="col">
+                            @carinfo01vm.CarTotal
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-danger btn-block">
+                                Unsubscribe
+                            </button>
+                        </div>
+                    </div>
+
+                }
+            }
+        </div>
+    </div>
+</div>
+
