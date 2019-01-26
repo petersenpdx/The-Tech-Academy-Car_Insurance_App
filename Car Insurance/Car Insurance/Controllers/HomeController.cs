@@ -1,5 +1,4 @@
 ﻿using Car_Insurance;
-using Car_Insurance.CarsDB.edmx.CarsDB.tt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
